@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+    <h1>Liste des category</h1>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nom</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for category in categories %} {# commentaires #}
+                <tr>
+                    <td>{{category.nom}}</td>
+                    <td><a href="{{ path('update_category', {'id': category.id })}}">Modifier</a></td>
+                    <td><a href="{{ path('delete_category', {'id': category.id })}}">Supprimer</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

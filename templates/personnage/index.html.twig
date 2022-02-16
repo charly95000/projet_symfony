@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PersonnageController!{% endblock %}
+
+{% block body %}
+    <h1>Liste des personnages</h1>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prenom</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for personnage in personnages %} {# commentaires #}
+                <tr>
+                    <td>{{personnage.nom}}</td>
+                    <td>{{personnage.prenom}}</td>
+                    <td><a href="{{ path('one', {'id': personnage.id })}}">Voir</a></td>
+                    <td><a href="{{ path('update', {'id': personnage.id })}}">Modifier</a></td>
+                    <td><a href="{{ path('delete', {'id': personnage.id })}}">Supprimer</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

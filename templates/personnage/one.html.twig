@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>{{personnage.nom}} {{personnage.prenom}}</h1>
+    
+    <p>Ce personnage est de la catégorie :
+    {% if personnage.category %}
+        {{personnage.category.nom}}
+    {% else %}
+        aucune
+    {% endif %}
+    </p>
+    <img src="{{asset('media/images/' ~ personnage.image)}}" alt="toto" />
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    Hello {{ name }} !
+
+    {% set tab = [1,2,3,4] %}{# déclaration d'une variable #}
+    <ul>
+    {% for el in tab %} 
+        <li>{{ el }}</li>
+    {% endfor %}
+    </ul>
+
+    {% if logged %}
+        Vous etes connecté
+    {% else %}
+        Vous n'etes pas connecté
+    {% endif %}
+{% endblock %}
